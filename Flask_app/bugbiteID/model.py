@@ -1,3 +1,5 @@
+# this py file preprocess the uploaded file to the right size, and get the response for prediction from TF serving
+
 import tensorflow as tf
 import numpy as np
 import json
@@ -18,8 +20,10 @@ def get_prediction(image_path):
     })
     response = requests.post(MODEL_URI, data=data.encode('utf-8'))
     result = json.loads(response.text)
-    print(result)
+    #print(result)
     prediction = np.squeeze(result['predictions'][0])
+    # argmax gets the class with the highest prob
     pred = np.argmax(prediction)
+    # output the name of the class
     class_name = CLASSES[pred]
     return class_name
