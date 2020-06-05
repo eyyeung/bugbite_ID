@@ -2,16 +2,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container text-center">
-    <h1>Predicted Class: {{ result.class_name }}</h1>
-    <hr>
-    <div>
-      <img src="{{ result.image_path }}" class="img-rounded" width="299" height="299">
-    </div>
-    <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
+
+
+<div class="text-center">
+  <h1>BugBite ID</h1>
+  <hr>
+  <div class="container">
+      <div>
+        <h2>Predicted Class: {{ result.class_name }}</h2>
+        <div>
+          <img src="{{ result.image_path }}" class="img-rounded" width="299" height="299">
+        </div>
+        <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
+      </div>
   </div>
 
-  <div class="container text-center">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h2>Products</h2>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-4">
+              <figure>
+                <img src="{{product['image']}}">
+                <figcaption class="card-body"><a class="card-text" href="{{ product['link']}}">{{ product['title']}}</a><br><span>{{product['price']}}</span></figcaption>
+              </figure>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <h2>Pest Control in your state</h2>
     <table class="table">
         <thead class="thead-light">
@@ -35,5 +57,8 @@
             {% endfor %}
         </tbody>
     </table>
+  </div>
+  
 </div>
+    
 {% endblock %}

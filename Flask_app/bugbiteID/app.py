@@ -31,11 +31,19 @@ def index():
                 'class_name': class_name,
                 'image_path': image_path,
             }
+
             # getting the state result
             db = get_db()
             companies = db.execute('SELECT * FROM companies WHERE state= ?',(state,)).fetchall()
+            categories = db.execute('SELECT category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
+            # products = db.execute('SELECT * FROM products WHERE category = ? LIMIT 1',(categories[0][0],)).fetchall()
+            # make empty list and then extend to combine the products
+            products = []
+            for category in categories:
+                product = db.execute('SELECT * FROM products WHERE category = ? LIMIT 1',(category[0],)).fetchall()
+                products.extend(product)
             # returning the result template
-            return render_template('result.html', result = result, companies = companies)
+            return render_template('result.html', result = result, companies = companies, products = products)
     return render_template('index.html')
 
 if __name__ == '__main__':

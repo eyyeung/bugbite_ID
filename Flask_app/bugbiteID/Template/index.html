@@ -2,14 +2,21 @@
 
 {% block content %}
  <div class="container text-center">
-   <h1>BugBite</h1>
+   <h1>BugBite ID</h1>
    <hr>
    <p>Upload Your Bug Bite Picture</p>
    <form class="form-inline" action="{{ url_for('index') }}" method="post" enctype="multipart/form-data">
     <div>
       <label for="state">State</label>
-      <input name="state" id="state" value="{{ request.form['state'] }}" class="btn btn-default">
-    </div> 
+      <select name="state" id="state" class="btn btn-default">
+      {% set states = ['Alabama', 'Alaska', 'Arkansas', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming', 'Washington, DC']%}
+        {% for state in states %}
+        <option value="{{state}}">{{state}}</option>
+        {% endfor %}
+      </select>
+      <!--<input name="state" id="state" value="{{ request.form['state'] }}" class="btn btn-default">
+      -->
+      </div> 
     <div class="form-group">
        <input type="file" name="file" class="btn btn-default">
      </div>
