@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
 <div class="text-center">
   <h1>BugBite ID</h1>
   <hr>
@@ -51,16 +50,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for company in companies %}
-            <tr>
-                <th scope="row">{{company['name']}}</th>
-                <td>{{company['phone']}}</th>
-                <td>{{company['website']}}</th>
-                <td>{{company['city']}}</th>
-                <td>{{company['county']}}</th>
-            </tr>
-            {% endfor %}
-        </tbody>
+          {% for company in companies %}
+          <tr>
+              <td scope="row">{{company['name']}}</td>
+              <td>{{company['phone']}}</td>
+              <td>{{company['website']}}</td>
+              <td>{{company['city']}}</td>
+              <td>{{company['county']}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
     </table>
   </div>
 
