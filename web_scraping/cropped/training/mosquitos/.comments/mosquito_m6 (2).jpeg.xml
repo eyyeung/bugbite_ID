@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>01A8D717</caption>
+  <note>01A8D717; INSECT BITE</note>
+  <place/>
+  <categories>
+    <category value="organism"/>
+    <category value="insecta"/>
+    <category value="invertebrate"/>
+    <category value="limb"/>
+    <category value="medical"/>
+    <category value="medical science"/>
+    <category value="medicine"/>
+    <category value="mosquito"/>
+    <category value="nematocera"/>
+    <category value="outdoor"/>
+    <category value="outside"/>
+    <category value="people"/>
+    <category value="person"/>
+    <category value="pterygota"/>
+    <category value="science"/>
+    <category value="trauma"/>
+    <category value="wound"/>
+    <category value="injury"/>
+    <category value="animal"/>
+    <category value="appendicular"/>
+    <category value="arthropoda"/>
+    <category value="bite"/>
+    <category value="body"/>
+    <category value="c"/>
+    <category value="child"/>
+    <category value="childish"/>
+    <category value="diptera"/>
+    <category value="disease"/>
+    <category value="eukaryote"/>
+    <category value="health"/>
+    <category value="human"/>
+    <category value="human anatomy"/>
+    <category value="hypersensitivity"/>
+    <category value="insect"/>
+  </categories>
+</comment>

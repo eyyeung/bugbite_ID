@@ -3,15 +3,25 @@ spiders,itching,benadryl
 ants,general,aloe_vera
 ants,general,ice_pack
 ants,general,witch_hazel
-bed_bugs,itching,benadryl
-bed_bugs,pain,pain reliever
+bed_bugs,pain,pain_reliever
 spiders,blisters,antibiotic_ointment
 chiggers,welts,antiseptic
 spiders,general,ice_pack
 chiggers,general,calamine_lotion
 chiggers,general,anti_itch_cream
-bed_bugs,general,anti_itch_cream
+bed_bugs,itching,anti_itch_cream
 bed_bugs,general,calamine_lotion
 bed_bugs,general,ice_pack
-bed_bugs,swelling,pain reliever
+bed_bugs,swelling,pain_reliever
 bed_bugs,burning,benadryl
+fleas,general,aloe_vera
+fleas,general,witch_hazel
+fleas,itching,benadryl
+fleas,general,anti_itch_cream
+mosquitos,general,ice_pack
+mosquitos,pain,pain_reliever
+mosquitos,itching,benadryl
+mosquitos,itching,anti_itch_cream
+ticks,general,ice_pack
+ticks,swelling,solarcaine
+ticks,itching,calamine_lotion

@@ -1,20 +1,18 @@
-2020-06-05 10:44:13.905232: I tensorflow_serving/model_servers/server.cc:86] Building single TensorFlow model file config:  model_name: bug_model model_base_path: /home/eyan/Desktop/
-2020-06-05 10:44:13.917500: I tensorflow_serving/model_servers/server_core.cc:462] Adding/updating models.
-2020-06-05 10:44:13.917571: I tensorflow_serving/model_servers/server_core.cc:573]  (Re-)adding model: bug_model
-2020-06-05 10:44:14.035458: I tensorflow_serving/core/basic_manager.cc:739] Successfully reserved resources to load servable {name: bug_model version: 1}
-2020-06-05 10:44:14.035519: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: bug_model version: 1}
-2020-06-05 10:44:14.035551: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: bug_model version: 1}
-2020-06-05 10:44:14.035598: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:31] Reading SavedModel from: /home/eyan/Desktop/1
-2020-06-05 10:44:14.256620: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:54] Reading meta graph with tags { serve }
-2020-06-05 10:44:14.256676: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:264] Reading SavedModel debug info (if present) from: /home/eyan/Desktop/1
-2020-06-05 10:44:14.264431: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: FMA
-2020-06-05 10:44:14.659620: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:203] Restoring SavedModel bundle.
-2020-06-05 10:44:15.750271: W external/org_tensorflow/tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 536870912 exceeds 10% of system memory.
-2020-06-05 10:44:15.750864: W external/org_tensorflow/tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 536870912 exceeds 10% of system memory.
-2020-06-05 10:44:26.525050: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:152] Running initialization op on SavedModel bundle at path: /home/eyan/Desktop/1
-2020-06-05 10:44:26.960909: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:333] SavedModel load for tags { serve }; Status: success: OK. Took 12925300 microseconds.
-2020-06-05 10:44:27.041711: I tensorflow_serving/servables/tensorflow/saved_model_warmup.cc:105] No warmup data file found at /home/eyan/Desktop/1/assets.extra/tf_serving_warmup_requests
-2020-06-05 10:44:27.044784: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: bug_model version: 1}
-2020-06-05 10:44:27.061445: I tensorflow_serving/model_servers/server.cc:358] Running gRPC ModelServer at 0.0.0.0:8500 ...
-2020-06-05 10:44:27.081724: I tensorflow_serving/model_servers/server.cc:378] Exporting HTTP/REST API at:localhost:8501 ...
+2020-06-11 12:13:18.537733: I tensorflow_serving/model_servers/server.cc:86] Building single TensorFlow model file config:  model_name: bug_model model_base_path: /home/eyan/Desktop/
+2020-06-11 12:13:18.550573: I tensorflow_serving/model_servers/server_core.cc:464] Adding/updating models.
+2020-06-11 12:13:18.550663: I tensorflow_serving/model_servers/server_core.cc:575]  (Re-)adding model: bug_model
+2020-06-11 12:13:18.662083: I tensorflow_serving/core/basic_manager.cc:739] Successfully reserved resources to load servable {name: bug_model version: 1}
+2020-06-11 12:13:18.662166: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: bug_model version: 1}
+2020-06-11 12:13:18.662227: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: bug_model version: 1}
+2020-06-11 12:13:18.662827: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:31] Reading SavedModel from: /home/eyan/Desktop/1
+2020-06-11 12:13:18.797724: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:54] Reading meta graph with tags { serve }
+2020-06-11 12:13:18.797794: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:295] Reading SavedModel debug info (if present) from: /home/eyan/Desktop/1
+2020-06-11 12:13:18.798264: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: FMA
+2020-06-11 12:13:19.141853: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:234] Restoring SavedModel bundle.
+2020-06-11 12:13:24.581681: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:183] Running initialization op on SavedModel bundle at path: /home/eyan/Desktop/1
+2020-06-11 12:13:24.939505: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:364] SavedModel load for tags { serve }; Status: success: OK. Took 6276667 microseconds.
+2020-06-11 12:13:25.002279: I tensorflow_serving/servables/tensorflow/saved_model_warmup.cc:105] No warmup data file found at /home/eyan/Desktop/1/assets.extra/tf_serving_warmup_requests
+2020-06-11 12:13:25.010529: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: bug_model version: 1}
+2020-06-11 12:13:25.043402: I tensorflow_serving/model_servers/server.cc:355] Running gRPC ModelServer at 0.0.0.0:8500 ...
+2020-06-11 12:13:25.060733: I tensorflow_serving/model_servers/server.cc:375] Exporting HTTP/REST API at:localhost:8501 ...
 [evhttp_server.cc : 238] NET_LOG: Entering the event loop ...

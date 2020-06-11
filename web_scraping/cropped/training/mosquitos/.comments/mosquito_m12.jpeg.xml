@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>01A8CQUR</caption>
+  <note>01A8CQUR; INSECT BITE</note>
+  <place/>
+  <categories>
+    <category value="allergy"/>
+    <category value="dermatology"/>
+    <category value="dermatosis"/>
+    <category value="insect"/>
+    <category value="insect bite"/>
+    <category value="mosquito"/>
+    <category value="mosquito bite"/>
+    <category value="pimple"/>
+    <category value="shot"/>
+    <category value="skin"/>
+  </categories>
+</comment>

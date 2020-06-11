@@ -35,15 +35,25 @@ def index():
             # getting the state result
             db = get_db()
             companies = db.execute('SELECT * FROM companies WHERE state= ?',(state,)).fetchall()
-            categories = db.execute('SELECT category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
-            # products = db.execute('SELECT * FROM products WHERE category = ? LIMIT 1',(categories[0][0],)).fetchall()
+            # get the product category belonging to the bug
+            #categories = db.execute('SELECT category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
+            situations_categories = db.execute('SELECT situation,category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
+            
             # make empty list and then extend to combine the products
-            products = []
+            conditions = []
+
+            for row in situations_categories:
+                category = row[1]
+                product = db.execute('SELECT * FROM products WHERE category = ? ORDER BY RANDOM() LIMIT 1',(category,)).fetchall()
+                conditions.append([row[0],category,product])
+
+            """ 
             for category in categories:
-                product = db.execute('SELECT * FROM products WHERE category = ? LIMIT 1',(category[0],)).fetchall()
+                product = db.execute('SELECT * FROM products WHERE category = ? ORDER BY RANDOM() LIMIT 1',(category[0],)).fetchall()
                 products.extend(product)
+            """
             # returning the result template
-            return render_template('result.html', result = result, companies = companies, products = products)
+            return render_template('result.html', result = result, companies = companies, conditions = conditions)
     return render_template('index.html')
 
 if __name__ == '__main__':

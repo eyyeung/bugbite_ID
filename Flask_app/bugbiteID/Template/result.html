@@ -9,11 +9,12 @@
   <hr>
   <div class="container">
       <div>
-        <h2>Predicted Class: {{ result.class_name }}</h2>
         <div>
           <img src="{{ result.image_path }}" class="img-rounded" width="299" height="299">
         </div>
+        <h2>Predicted Class: {{ result.class_name|capitalize }}</h2>
         <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
+        
       </div>
   </div>
 
@@ -21,9 +22,12 @@
     <div class="container">
       <h2>Products</h2>
       <div class="row">
-        {% for product in products %}
+        {% for condition in conditions %}
         <div class="col-md-4">
               <figure>
+                <h4>{{ condition[0]}}:</h4>
+                <p>{{condition[1]|replace("_", " ")|capitalize}}</p>
+                {% set product = condition[2][0] %}
                 <img src="{{product['image']}}">
                 <figcaption class="card-body"><a class="card-text" href="{{ product['link']}}">{{ product['title']}}</a><br><span>{{product['price']}}</span></figcaption>
               </figure>
@@ -35,6 +39,7 @@
 
   <div class="container">
     <h2>Pest Control in your state</h2>
+    <p>{{data}}</p>
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -58,7 +63,18 @@
         </tbody>
     </table>
   </div>
-  
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">
+        Disclaimer: This web application is for informational purpose only and DOES NOT CONSTITUTE THE PROVIDING OF MEDICAL ADVICE OR DIAGNOSIS.
+        <br>
+        It is not intended to be a substitute for independent professional medical judgment, advice, diagnosis, or treatment.
+        <br>
+        Please consult your physician or other qualified health care provider if your condition worsen or you have any medical questions.
+      </span>
+    </div>
+  </footer>
+
 </div>
-    
 {% endblock %}
