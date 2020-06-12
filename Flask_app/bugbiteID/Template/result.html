@@ -11,7 +11,7 @@
         <div>
           <img src="{{ result.image_path }}" class="img-rounded" width="299" height="299">
         </div>
-        <h2>Predicted Class: {{ result.class_name|capitalize }}</h2>
+        <h2>Most likely: {{ result.class_name|capitalize }}</h2>
         <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
         
       </div>
@@ -37,7 +37,7 @@
   </div>
 
   <div class="container">
-    <h2>Pest Control in your state</h2>
+    <h2>Pest Control Companies in {{companies[0]['county']}}</h2>
     <p>{{data}}</p>
     <table class="table">
         <thead class="thead-light">
@@ -46,7 +46,6 @@
                 <th scope="col">Phone</th>
                 <th scope="col">Website</th>
                 <th scope="col">City</th>
-                <th scope="col">County</th>
             </tr>
         </thead>
         <tbody>
@@ -56,7 +55,6 @@
               <td>{{company['phone']}}</td>
               <td>{{company['website']}}</td>
               <td>{{company['city']}}</td>
-              <td>{{company['county']}}</td>
           </tr>
           {% endfor %}
       </tbody>
