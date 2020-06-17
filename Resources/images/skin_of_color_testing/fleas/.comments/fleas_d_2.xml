@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Flea bites on knee</caption>
+  <note>Flea bites on a human knee.</note>
+  <place/>
+  <categories>
+    <category value="flea"/>
+    <category value="bite"/>
+    <category value="insect"/>
+    <category value="medicine"/>
+    <category value="medical"/>
+    <category value="healthcare"/>
+    <category value="disorder"/>
+    <category value="condition"/>
+    <category value="allergy"/>
+    <category value="allergic"/>
+  </categories>
+</comment>

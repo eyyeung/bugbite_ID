@@ -12,6 +12,10 @@ import model
 from db import get_db
 
 app = Flask(__name__, template_folder='Template')
+
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.jinja_env.auto_reload = True
+
 Bootstrap(app)
 
 # a route for ajax to connects to and updates the county in that state
@@ -40,7 +44,7 @@ def index():
 
             # only there is a file that we go to the result page
             if uploaded_file.filename != '':
-                image_path = os.path.join('static', uploaded_file.filename)
+                image_path = os.path.join('static/images', uploaded_file.filename)
                 uploaded_file.save(image_path)
                 class_name = model.get_prediction(image_path)
                 result = {
@@ -55,6 +59,9 @@ def index():
                 #categories = db.execute('SELECT category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
                 situations_categories = db.execute('SELECT situation,category FROM bug_category WHERE bug= ?',(class_name,)).fetchall()
                 
+                # getting the info about the bug bite
+                info = db.execute('SELECT * FROM info WHERE bug = ?',(class_name,)).fetchall()
+
                 # make empty list and then extend to combine the products
                 conditions = []
 
@@ -64,7 +71,7 @@ def index():
                     conditions.append([row[0],category,product])
 
                 # returning the result template
-            return render_template('result.html', result = result, companies = companies, conditions = conditions)    
+            return render_template('result.html', info = info ,result = result, companies = companies, conditions = conditions)    
     return render_template('index.html')
 
 if __name__ == '__main__':

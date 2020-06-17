@@ -6,7 +6,9 @@ import json
 import requests
 
 SIZE=150
-MODEL_URI='http://localhost:8501/v1/models/bug_model:predict'
+
+model = tf.keras.models.load_model('/home/eyan/Desktop/bug_bite_old/models/8_class_mixed7_79p.h5')
+
 CLASSES = ['ants','bed_bugs','chiggers','fleas','mosquitos','no_bites','spiders','ticks']
 
 def get_prediction(image_path):
@@ -15,14 +17,9 @@ def get_prediction(image_path):
     image = tf.keras.applications.inception_v3.preprocess_input(image)
     image = np.expand_dims(image, axis=0)
 
-    data = json.dumps({
-        'instances': image.tolist()
-    })
-    response = requests.post(MODEL_URI, data=data.encode('utf-8'))
-    result = json.loads(response.text)
-    prediction = np.squeeze(result['predictions'][0])
-    # argmax gets the class with the highest prob
-    pred = np.argmax(prediction)
+    
+    result = model.predict(image)
+    pred = np.argmax(result[0])
     # output the name of the class
     class_name = CLASSES[pred]
     return class_name

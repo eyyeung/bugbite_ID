@@ -13,8 +13,6 @@ def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect(
             # current_app is another object that points to the Flask application handling the requests
-            # the DATABASE is set in the __init__ file
-            #current_app.config['DATABASE'],
             'bugbite.sqlite',
             detect_types= sqlite3.PARSE_DECLTYPES
         )

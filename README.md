@@ -1,22 +1,15 @@
 # BugBite ID
-* Description: An web application to help you identify what bugs bite you through an image of your bug bite
+* Description: An web application to help you identify what bugs bite you through an image of your bug bite and suggests bug-based and situation-based products and pest control companies
 
 # Folders
-* web_scraping :
-    * contains Jupyter notebook for web scraping for images, products, and pest control companies
+* Resources :
+    * contains Jupyter notebooks for web scraping for images, products, and pest control companies and for making SQLite database
     * folders:
-        * useful: contains all the images used for training and validation in their inidividual folders
-        * national_records: contains ER visit for bug bites in the 2000s annually and monthly record
-        * webpage_resources: bug bite relief products csv
-            * others: bug_situation_treatment
+        * cropped: contains all the images used for training and validation in their inidividual folders
+        * webpage_resources: csv files containing information about products, bug bite information, etc for making the SQLite databases
 
-* EDA_Preprocessing : 
-    * Basic stats about the images Jupyter notebook
-
-* TensorFlow_Keras: 
-    * Jupyter notebooks for training TF Keras model and looking at misidentifications
+* TensorFlow_Keras_LIME: 
+    * Jupyter notebooks for training and saving TF Keras model, looking at misidentifications, visualizing intermediate layers, and explaining the classication through LIME
 
 * Flask_app:
-    * tensorflow serving Jupyter notebook - run this to start TF serving
-    * folders:
-        * bugbiteID- the Flask app
+    * bugbiteID- the Flask app

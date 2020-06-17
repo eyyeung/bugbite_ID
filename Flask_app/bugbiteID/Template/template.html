@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- title -->
+    <title>{% block title %}BugBite ID{% endblock %} </title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">
+      <div class="container text-center">
+        <img class="logo" src="{{ url_for('static', filename='logo/logo.PNG') }}">
+        <hr>  
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+    <div id="footer">
+      {% block footer %}
+      <footer class="footer">
+        <div class="container">
+          <p>This tool can only identify bug bites from fire ants, bed bugs, chiggers, fleas, mosquitos, spiders, ticks, or no bug bites.</p>
+          <span class="text-muted">
+            Disclaimer: This web application is for informational purpose only and DOES NOT CONSTITUTE THE PROVIDING OF MEDICAL ADVICE OR DIAGNOSIS.
+            <br>
+            It is not intended to be a substitute for independent professional medical judgment, advice, diagnosis, or treatment.
+            <br>
+            Please consult your physician or other qualified health care provider if your condition worsen or you have any medical questions.
+          </span>
+        </div>
+      </footer>
+      {% endblock %}
+    </div>
+  </body>
+</html>
