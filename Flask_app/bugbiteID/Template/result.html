@@ -3,28 +3,25 @@
 {% block content %}
 
   <div class="container d-flex">
-    <div class="container">
-      <div>
-        <div>
+    <div class="row">
+      <div class="container col">
           <img src="{{ result.image_path }}" class="img-thumbnail" width="300" height="300">
-        </div>
-        <h4>Most likely: {{ result.class_name|replace("_", " ")|capitalize }}</h4>
+          <h4>Most likely: {{ result.class_name|replace("_", " ")|capitalize }}</h4>
+      </div>
+
+      <div class="container text-left info col">
+        <h2><a class="text-info" href="{{info[0]['Resource']}}">Information from Healthline</a></h2>
+        <ul>
+          <li>Bite Appearance:</li>
+        <p>{{info[0]['Symptoms']}}</p>
+        <li>Bite Location:</li>
+        <p>{{info[0]['Location']}}</p>
+        <li>Single or Multiple Bites:</li>
+        <p>{{info[0]['Bites']}}</p>
+        </ul>
+        <p><a class="text-info" href="{{info[0]['Resource']}}">Read more about bites from {{ result.class_name|replace("_", " ") }}.</a></p>
       </div>
     </div>
-
-    <div class="container text-left info">
-      <h2><a class="text-info" href="{{info[0]['Resource']}}">Information from Healthline</a></h2>
-      <ul>
-        <li>Bite Appearance:</li>
-      <p>{{info[0]['Symptoms']}}</p>
-      <li>Bite Location:</li>
-      <p>{{info[0]['Location']}}</p>
-      <li>Single or Multiple Bites:</li>
-      <p>{{info[0]['Bites']}}</p>
-      </ul>
-      <p><a class="text-info" href="{{info[0]['Resource']}}">Read more about bites from {{ result.class_name|replace("_", " ") }}.</a></p>
-      
-      </div>
   </div>
 
   
@@ -34,7 +31,7 @@
         {% for condition in conditions %}
 
         {% set product = condition[2][0] %}
-        <div class="col-4 pad-bottom">
+        <div class="col pad-bottom">
           <div class="card">
             <h4>{{ condition[0]}}:</h4>
             <img class="card-img-top" width=200px height=200px src="{{product['image']}}">

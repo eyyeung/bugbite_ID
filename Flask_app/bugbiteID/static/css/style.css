@@ -1,5 +1,6 @@
 .logo {
-    width:600px;
+    max-width:600px;
+    width:100%;
 }
 
 .footer {
@@ -9,6 +10,11 @@
 
 .sample-pic {
     padding-right: 25%;
+}
+
+.card-img-top {
+    height:auto;
+    width:100%;
 }
 
 .pad-bottom {

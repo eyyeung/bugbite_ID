@@ -2,8 +2,6 @@
 
 import tensorflow as tf
 import numpy as np
-import json
-import requests
 
 SIZE=150
 
@@ -17,7 +15,6 @@ def get_prediction(image_path):
     image = tf.keras.applications.inception_v3.preprocess_input(image)
     image = np.expand_dims(image, axis=0)
 
-    
     result = model.predict(image)
     pred = np.argmax(result[0])
     # output the name of the class
