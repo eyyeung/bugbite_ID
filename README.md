@@ -1,7 +1,7 @@
 # BugBite ID
 
 * Description:
-    * An web application to help you identify what bugs bite you through an image of your bug bite and suggests bug-based and situation-based products and pest control companies.
+    * An web application to help you identify what bugs bite you through an image of your bug bite and suggests bug-based and situation-based products and pest control companies. For a live demo of the app, click this [link](http://insightfulanalytics.website).
 
 
 * Types of bug bites that this web application can identify:
